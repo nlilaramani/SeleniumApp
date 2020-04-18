@@ -68,6 +68,9 @@ public class FlightBookingTest {
         new Select(driver.findElement(By.name("toMonth"))).selectByIndex(6);
         new Select(driver.findElement(By.name("toDay"))).selectByIndex(8);
         driver.findElements(By.name("servClass")).get(1).click();
+        for(WebElement e:driver.findElements(By.name("servClass"))){
+            e.click();
+        }
         driver.findElement(By.xpath("//input[@name='findFlights']")).click();
         driver.findElements(By.name("outFlight")).get(2).click();
         driver.findElements(By.name("inFlight")).get(1).click();
@@ -84,4 +87,5 @@ public class FlightBookingTest {
         WebElement e=driver.findElement(By.xpath("//img[@src='/images/masts/mast_confirmation.gif']"));
         assert(e.isDisplayed());
     }
+    
 }
