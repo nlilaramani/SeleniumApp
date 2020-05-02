@@ -120,6 +120,13 @@ public class UserProfileTest {
         File file=new File("c://qa//screenshot.png");
         file=screen.getScreenshotAs(OutputType.FILE);
     }
-    
+    @Test
+    public void testScreenshot(){
+        driver.get("http://www.google.com");
+        TakesScreenshot screen=(TakesScreenshot)driver;
+        File destfile=new File("c://qa//screenshot.png");
+        File file=screen.getScreenshotAs(OutputType.FILE);
+        //FileUtils().fileCopy(file,destfile);
+    }
     
 }
